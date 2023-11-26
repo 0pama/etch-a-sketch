@@ -16,11 +16,14 @@
             <div class="grid-size" id="grid-size">8x8</div>
             <input type="range" onchange="display()" min="2" max="100" value="8" id="input" />
             <button class="apply"  onclick="createGrid()">Apply</button>
+            <button id="random" onclick="randomColor()">random</button>
+            <input type="color" onchange="normalmode()" name="colorset" id="colorset">t
             <button class="reset" onclick="reset()"  style="
             width: 52px;
             height: 42px;">
               <img src="images/power-button.svg" alt="Reset" />
             </button>
+            <p id="color-mode"></p>
           </div>
         </div>
         <div class="grid"></div>

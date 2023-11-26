@@ -11,13 +11,28 @@ function display() {
 
 }
 
+function randomColor() {
+    document.querySelector('p').innerText = "randomColor"
+}
+
+function normalmode() {
+    document.querySelector('p').innerText = "normalcolormode"
+}
+
+
 function createGrid() {
     grid.innerHTML = '';
    for (let i = 1; i <  input.value * input.value; i++) {
     let div = document.createElement('div');
-    div.style.cssText = "border:1px solid black"    
+    div.style.cssText = "border:1px solid black";
+    const [red, green, blue] = [Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256)];
+    let color = document.querySelector("#colorset");
     div.addEventListener("mouseover", () => {
-        div.style.backgroundColor = "black"
+        if( document.querySelector('p').innerText == "normalcolormode") {
+        div.style.backgroundColor = color.value
+        } else {
+            div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+        }
     });
    grid.appendChild(div);
 
