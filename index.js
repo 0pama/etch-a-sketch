@@ -20,6 +20,10 @@ function normalmode() {
 }
 
 
+function erasemode() {
+    document.querySelector('p').innerText = "erasemode"
+}
+
 function createGrid() {
     // populating the grid
     grid.innerHTML = '';
@@ -32,7 +36,10 @@ function createGrid() {
     //
 
     div.addEventListener("mouseover", () => {
-        if( document.querySelector('p').innerText == "normalcolormode") {
+        if( document.querySelector('p').innerText == "erasemode") {
+            div.style.backgroundColor = "white";
+        }
+        else if( document.querySelector('p').innerText == "normalcolormode") {
         div.style.backgroundColor = color.value
         } else {
             div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
